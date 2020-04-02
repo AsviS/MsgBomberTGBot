@@ -1,4 +1,4 @@
-<h1 align="center">MsgBomberTGBot Telegram Bot - v1.0</h1>
+<h1 align="center">MsgBomberTGBot Telegram Bot - v1.1</h1>
 <p align="center">An open-source SMS bomber bot for Telegram. Inspired by TheSpeedX's Project</p><br>
 
 ## Note:
@@ -24,6 +24,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 - Lots of integrated SMS/call APIs
 - Unlimited (Limited against abusing) and super-fast bombing
 - Frequent updates
+- [Update] Now with the option to stop bombing after bombing has started
 
 ## Usage:
 
