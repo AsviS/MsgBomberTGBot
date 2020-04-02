@@ -1,5 +1,5 @@
-<h1 align="center">TBomb Telegram Bot - v1.0</h1>
-<p align="center">An open-source SMS/call bomber bot for Telegram. Inspired by TheSpeedX's Project</p><br>
+<h1 align="center">MsgBomberTGBot Telegram Bot - v1.0</h1>
+<p align="center">An open-source SMS bomber bot for Telegram. Inspired by TheSpeedX's Project</p><br>
 
 ## Note:
 
@@ -17,8 +17,7 @@ If output looks like `Python 3` - Congrats, Python 3 is installed properly.
 
 - Do not use this to harm others.
 - This script is only for educational purposes or to prank.
-- **None of the developers/contributors are responsible for the misuse of TBomb.**
-<br>
+- **None of the developers/contributors are responsible for the misuse of MsgBomberTGBot.**
 
 ## Features:
 
@@ -36,11 +35,11 @@ Run these commands to run the bot
 This bot can run in non-docker mode
 To use the bomber type the following commands in your favorite cli-tool:
 ```
-git clone https://github.com/TheSpeedX/TBomb.git
-cd TBomb
+git clone https://github.com/SoapDev2018/MsgBomberTGBot.git
+cd MsgBomberTGBot
 pip3 install -r requirements.txt
 ```
-Change the configuration variables in config.py, then type the following command:
+Change the configuration variables in ```config.py```, then type the following command:
 ```
 python3 main.py
 ```
@@ -51,11 +50,11 @@ python3 main.py
 This bot can run in non-docker mode
 To use the bomber type the following commands in your favorite cli-tool:
 ```
-git clone https://github.com/TheSpeedX/TBomb.git
-cd TBomb
+git clone https://github.com/SoapDev2018/MsgBomberTGBot.git
+cd MsgBomberTGBot
 pip install -r requirements.txt
 ```
-Change the configuration variables in config.py, then type the following command:
+Change the configuration variables in ```config.py```, then type the following command:
 ```
 python main.py
 ```
@@ -71,17 +70,18 @@ sudo dockerd
 ```
 - Build Docker image:
 ```
-sudo docker build . -t TBomb
+sudo docker build . -t MsgBomberTGBot
 ```
 - Run the image:
 ```
-sudo docker run TBomb
+sudo docker run MsgBomberTGBot
 ```
 
-## CONTRIBUTORS:
+## CREDITS:
 
-- **SpeedX**<br>
+- **SpeedX** for his original TBomb<br>
 [-] Mail At: ggspeedx29@gmail.com
+[-] Check Out Repo At: https://github.com/thespeedx/TBomb 
 
 - **DarkestEntropy**<br>
 [-] Check At: https://github.com/darkestentropy
@@ -94,9 +94,12 @@ sudo docker run TBomb
 - **0n1cOn3 (Stefan)**<br>
 [-] Mail At: 0n1cOn3@gmx.ch
 
+- **AvinashReddy3108** for his awesome list of bombing sources<br>
+[-] Check Out Repo At: https://github.com/AvinashReddy3108/YetAnotherSMSBomber
+
 ## Donators:
 
-**[@] 34D30Y ( 34db0y@protonmail.com  )**
+**[@] 34D30Y** (34db0y@protonmail.com)
 
 **[@] SC AMAN**
 
@@ -105,8 +108,5 @@ sudo docker run TBomb
 Feel Free To Open An Issue...
 
 ```
-                 Mail: ggspeedx29@gmail.com<br>
-       YouTube Channel: https://www.youtube.com/c/GyanaTech
+                     Mail: sayantandev2018@gmail.com
 ```
-
-<a href="https://www.youtube.com/c/GyanaTech">Check Out My YouTube Channel</a>
