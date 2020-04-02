@@ -368,7 +368,7 @@ def bomb(target, counter, delay, ch, cc, update, context, msg_id):
     requested = 0
     success = int(requested) - int(failed)
     bombs = int(counter) + 1
-    while success < (int(bombs)):
+    while (success < (int(bombs))) and (context.user_data["engaged"] == True):
         try:
             api = random.choice(ch)
         except Exception:
@@ -397,6 +397,9 @@ def bomb(target, counter, delay, ch, cc, update, context, msg_id):
             while ch.count(api) > 0:
                 ch.remove(api)
         time.sleep(float(delay))
+    if context.user_data["engaged"] == False:
+        context.bot.sendMessage(chat_id=chat_id, text="Bombing stopped", reply_to_message_id=msg_id)
+        return
     context.bot.sendMessage(chat_id=chat_id, text="Bombing Completed!", reply_to_message_id=msg_id)
 
 @run_async
@@ -459,10 +462,12 @@ def delay(update, context):
         num = context.user_data["num"]
         ctr = context.user_data["msgs"]
         delay = context.user_data["delay"]
+        context.user_data["engaged"] = True
+        context.bot.sendMessage(chat_id=chat_id, text="Delay of " + update.message.text + " seconds has been set!", reply_to_message_id=msg_id)
         do_bomb(num,ctr,delay,update,context,msg_id)
         text = "Bombing " + num + " with " + ctr + " messages, each with a delay of " + delay + " seconds..."
         context.bot.sendMessage(chat_id=chat_id, text=text)
-        context.bot.sendMessage(chat_id=chat_id, text="Bombing now...", reply_to_message_id=msg_id)
+        context.bot.sendMessage(chat_id=chat_id, text="Bombing now...\nPress /stop to stop the bombing")
     except IndexError:
         context.bot.sendMessage(chat_id=chat_id,text="You missed one or more parameters, exiting...")
         return
@@ -480,6 +485,13 @@ def cancel(update, context):
     context.bot.sendMessage(chat_id=chat_id, text="Operation cancelled by user", reply_to_message_id=msg_id)
     return ConversationHandler.END
 
+@run_async
+def stop_bomb(update, context):
+    chat_id = update.effective_chat.id
+    msg_id = update.effective_message.message_id
+    context.user_data["engaged"] = False
+    context.bot.sendMessage(chat_id=chat_id, text="Stopping bombing...", reply_to_message_id=msg_id)
+
 def main():
     updater = Updater(token=Config.BOT_TOKEN, use_context=True)
     dp = updater.dispatcher
@@ -494,6 +506,7 @@ def main():
         fallbacks=[CommandHandler('cancel', cancel)]
     )
     dp.add_handler(conv_handler)
+    dp.add_handler(CommandHandler('stop',stop_bomb))
     dp.add_error_handler(error)
     updater.start_polling()
     logging.info('Bot started!')
