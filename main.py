@@ -405,13 +405,12 @@ def do_bomb(num, ctr, delay, update, context, msg_id):
     pn = num
     nm = int(ctr)
     dl = float(delay)
-    else:
-        maxlim = 500
-        if nm > maxlim:
-            print('Number Of SMS Has been Set To ' + str(maxlim))
-            nm = maxlim
-        ch = [i for i in range(19)]
-        bomb(pn, nm, dl, ch, '91', update, context, msg_id)
+    maxlim = 500
+    if nm > maxlim:
+        print('Number Of SMS Has been Set To ' + str(maxlim))
+        nm = maxlim
+    ch = [i for i in range(19)]
+    bomb(pn, nm, dl, ch, '91', update, context, msg_id)
 
 @run_async
 def start(update, context):
