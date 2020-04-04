@@ -40,7 +40,7 @@ git clone https://github.com/SoapDev2018/MsgBomberTGBot.git
 cd MsgBomberTGBot
 pip3 install -r requirements.txt
 ```
-Change the configuration variables in ```config.py```, then type the following command:
+Rename the file ```config_sample.py``` to ```config.py```. Change the configuration variables in ```config.py``` appropriately, then type the following command:
 ```
 python3 main.py
 ```
@@ -55,7 +55,7 @@ git clone https://github.com/SoapDev2018/MsgBomberTGBot.git
 cd MsgBomberTGBot
 pip install -r requirements.txt
 ```
-Change the configuration variables in ```config.py```, then type the following command:
+Rename the file ```config_sample.py``` to ```config.py```. Change the configuration variables in ```config.py``` appropriately, then type the following command:
 ```
 python main.py
 ```
@@ -65,6 +65,7 @@ python main.py
 ```
 sudo snap install docker
 ```
+- Rename the file ```config_sample.py``` to ```config.py```. Change the configuration variables in ```config.py``` appropriately
 - Start docker daemon (skip if already running):
 ```
 sudo dockerd
